@@ -22,51 +22,55 @@ $ docker run -d -p 5000:5000 landmarks_5_points_app:v0.1
 **Request**
 
 ```bash
-$ curl -F file=@<picture file path> -F submit=OK http://localhost:5000/upload
+$ curl -F file=@<picture file path> http://localhost:5000/upload
 ```
 
 **Response**
 
 ```json
 {
-  "status": "success",
   "points": [
-    [
-      "bounding box",
-      [
-        111,
-        171,
-        379,
-        439
-      ]
-    ],
-    "right_eye_0",
-    [
-      339,
-      243
-    ],
-    "right_eye_1",
-    [
-      291,
-      247
-    ],
-    "left_eye_2",
-    [
-      171,
-      243
-    ],
-    "left_eye_3",
-    [
-      220,
-      247
-    ],
-    "nose_4",
-    [
-      258,
-      339
-    ]
+    {
+      "bounding box": {
+        "left": 111,
+        "top": 171,
+        "right": 379,
+        "bottom": 439
+      }
+    },
+    {
+      "right_eye_0": {
+        "x": 339,
+        "y": 243
+      }
+    },
+    {
+      "right_eye_1": {
+        "x": 291,
+        "y": 247
+      }
+    },
+    {
+      "left_eye_2": {
+        "x": 171,
+        "y": 243
+      }
+    },
+    {
+      "left_eye_3": {
+        "x": 220,
+        "y": 247
+      }
+    },
+    {
+      "nose_4": {
+        "x": 258,
+        "y": 339
+      }
+    }
   ],
-  "message": "photo uploaded"
+  "message": "Фото получено",
+  "status": "Успех"
 }
 ```
 
